@@ -26,9 +26,11 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* FIXED IMAGE STYLING */
 img {
-  display: flex;
   width: 100%;
+  height: auto;
+  display: block;
 }
 
 a {
@@ -201,22 +203,27 @@ nav {
   text-align: center;
 }
 
-/* Portfolio */
+/* ---------- PORTFOLIO FIXED ---------- */
 .portfolio__grid {
   margin-top: 4rem;
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.portfolio__grid div {
+  display: grid;
+  gap: 1rem;
 }
 
 .portfolio__grid img {
   width: 100%;
-  height: auto;
+  height: 260px;      /* uniform height for clean alignment */
+  object-fit: cover;  /* clean crop */
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.03);
   padding: 12px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 0 rgba(0, 255, 255, 0);
   transition: box-shadow 0.4s ease, transform 0.3s ease;
 }
 
@@ -306,6 +313,10 @@ nav {
 }
 
 /* Footer */
+footer {
+  background: linear-gradient(to bottom, #33030d, #550616, #660816);
+}
+
 .footer__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -368,10 +379,6 @@ nav {
   font-size: 0.95rem;
   border-top: 1px solid rgba(255, 80, 80, 0.15);
   background: rgba(255, 255, 255, 0.03);
-}
-
-footer {
-  background: linear-gradient(to bottom, #33030d, #550616, #660816);
 }
 
 /* Responsive: Tablets */
@@ -455,53 +462,29 @@ footer {
     margin-inline: auto;
   }
 
-  .about__content .section__header {
-    margin-inline-start: unset;
-  }
-
-  .about__content :is(p, .about__btn) {
-    text-align: left;
-  }
-
   .portfolio__grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .portfolio__grid > div:nth-child(3) {
-    grid-column: unset;
-    grid-template-columns: 1fr;
-  }
-
-  /* Contact Section Background */
   .contact {
     background: radial-gradient(circle at top, #ffe6e8, #ffccd2 75%);
   }
 
-  /* Layout */
   .contact__container {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Heading */
-  .contact__content .section__header {
-    margin-inline-start: unset;
-    color: #060001;
-  }
-
-  /* Paragraph */
   .contact__content p {
     text-align: left;
     color: #7a0b18;
   }
 
-  /* Image Wrapper */
   .contact__image {
     display: flex;
     position: relative;
     isolation: isolate;
   }
 
-  /* Image */
   .contact__image img {
     position: absolute;
     bottom: 0;
